@@ -101,7 +101,7 @@ public class FlagStaffExercise{
         // Add buttons, textfield, slider
         UI.addButton("Raise", fse::doRaise);
         UI.addButton("Lower", fse::doLower);
-        UI.addSlider("Distance", DISTMIN, DISTMAX, DISTINIT, fse::setAmount);
+        UI.addSlider("Distance", AMOUNTMIN, AMOUNTMAX, AMOUNTINT, fse::setAmount);
         
         
         
