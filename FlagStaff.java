@@ -37,13 +37,19 @@ public class FlagStaff{
     // position of the base of the flag staff
     // position of the flag (eg, the position of the bottom of the flag)
     // position of the ground
-    /*# YOUR CODE HERE */
+    double flagStaffBase;
+    double flagPos;
+    double groundPos;
 
     /** Constructor:
      * Parameters: the position of the base of the flag staff
      * Initialises the fields, but does not draw the flag.
      */
-    /*# YOUR CODE HERE */
+    public FlagStaff(double base) {
+        flagStaffBase = base;
+        flagPos = base; // since flag starts at the base
+        groundPos = base + 1; // so ground is below pole
+    }
 
     /** redraw method:
      * Draws the flagstaff (a line) and the flag (a blue rectangle)*/
