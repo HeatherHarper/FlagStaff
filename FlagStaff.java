@@ -38,8 +38,8 @@ public class FlagStaff{
     // position of the flag (eg, the position of the bottom of the flag)
     // position of the ground
     double flagStaffBase;
-    double flagPos;
-    double groundPos;
+    double flagPosition;
+    double groundPosition;
 
     /** Constructor:
      * Parameters: the position of the base of the flag staff
@@ -47,8 +47,8 @@ public class FlagStaff{
      */
     public FlagStaff(double base) {
         flagStaffBase = base;
-        flagPos = base; // since flag starts at the base
-        groundPos = base + 1; // so ground is below pole
+        flagPosition = base; // since flag starts at the base
+        groundPosition = base + 1; // so ground is below pole
     }
 
     /** redraw method:
