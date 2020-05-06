@@ -71,11 +71,17 @@ public class FlagStaffExercise{
 
     /** doRaise method:
      * raise the flag*/
-    /*# YOUR CODE HERE */
+    private void doRaise() {
+        flag1.raise(amount);
+        flag1.redraw();
+    }
     
     /** doLower method:
      * lower the flag*/
-    /*# YOUR CODE HERE */     
+    private void doLower() {
+        flag1.lower(amount);
+        flag1.redraw();
+    }    
         
     /** setAmount method:
      * sets the amount to raise or lower flag by*/

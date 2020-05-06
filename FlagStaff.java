@@ -54,14 +54,24 @@ public class FlagStaff{
      * Changes the field, but does not let it go over the top of the flagstaff.
      * Does not redraw the flag.
      */
-    /*# YOUR CODE HERE */
+    public void raise(double amountUp) {
+        flagPosition += amountUp;
+        if (flagPosition > (flagStaffBase + FLAGSTAFF_HEIGHT - FLAG_SIZE)){
+            flagPosition = FLAGSTAFF_HEIGHT - FLAG_SIZE;
+        }
+    }
 
     /** lower method:
      * Parameter:  amount to lower the flag
      * Changes the field, but does not let it go below the bottom of the flagstaff.
      * Does not redraw the flag.
      */
-    /*# YOUR CODE HERE */
+    public void lower(double amountDown) {
+        flagPosition -= amountDown;
+        if (flagPosition < flagStaffBase) {
+            flagPosition = flagStaffBase;
+        }
+    }
 
     /** printCountry method:
      * Parameter text to print to screen
