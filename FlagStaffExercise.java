@@ -71,17 +71,11 @@ public class FlagStaffExercise{
 
     /** doRaise method:
      * raise the flag*/
-    private void doRaise() {
-        flag1.raise(amount);
-        flag1.redraw();
-    }
+    /*# YOUR CODE HERE */
     
     /** doLower method:
      * lower the flag*/
-    private void doLower() {
-        flag1.lower(amount);
-        flag1.redraw();
-    }    
+    /*# YOUR CODE HERE */     
         
     /** setAmount method:
      * sets the amount to raise or lower flag by*/
@@ -107,8 +101,8 @@ public class FlagStaffExercise{
         // Add buttons, textfield, slider
         UI.addButton("Raise", fse::doRaise);
         UI.addButton("Lower", fse::doLower);
-        UI.addSlider("Distance", AMOUNTMIN, AMOUNTMAX, AMOUNTINT, fse::setAmount);
-        
+        UI.addSlider("Amount", AMOUNTMIN, AMOUNTMAX, AMOUNTINT, fse::setAmount);
+        UI.addTextField("Country", fse::printCountry);
         
         
         
