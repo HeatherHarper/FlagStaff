@@ -1,4 +1,4 @@
-// This program is copyright VUW.
+a// This program is copyright VUW.
 // You are granted permission to use it to construct your answer to a Onslow College 13DTC assignment.
 // You may not distribute it in any other way without permission.
 
@@ -79,7 +79,9 @@ public class FlagStaffExercise{
         
     /** setAmount method:
      * sets the amount to raise or lower flag by*/
-    /*# YOUR CODE HERE */     
+    private void setAmount(double amount) {
+        this.raiseAmount = amount;
+    }
     
     /** printCountry method:
      * print the country the user entered in textfield*/
@@ -92,9 +94,20 @@ public class FlagStaffExercise{
         UI.addButton("Clear", fse::clear );
         UI.addButton("FlagStaff", fse::doFlagStaff );
         
+        final int AMOUNTMIN = -20;
+        final int AMOUNTMAX = 20;
+        final int AMOUNTINT = 20;
+        
         // Add buttons, textfield, slider
-        /*# YOUR CODE HERE */
-        UI.addButton("Quit", UI::quit );        
+        UI.addButton("Raise", fse::doRaise);
+        UI.addButton("Lower", fse::doLower);
+        UI.addSlider("Distance", AMOUNTMIN, AMOUNTMAX, AMOUNTINT, fse::setAmount);
+        
+        
+        
+        
+        UI.addButton("Quit", UI::quit );
+        
     }
 
 }
