@@ -1,4 +1,4 @@
-a// This program is copyright VUW.
+// This program is copyright VUW.
 // You are granted permission to use it to construct your answer to a Onslow College 13DTC assignment.
 // You may not distribute it in any other way without permission.
 
@@ -107,8 +107,8 @@ public class FlagStaffExercise{
         // Add buttons, textfield, slider
         UI.addButton("Raise", fse::doRaise);
         UI.addButton("Lower", fse::doLower);
-        UI.addSlider("Distance", AMOUNTMIN, AMOUNTMAX, AMOUNTINT, fse::setAmount);
-        
+        UI.addSlider("Amount", AMOUNTMIN, AMOUNTMAX, AMOUNTINT, fse::setAmount);
+        UI.addTextField("Country", fse::printCountry);
         
         
         
