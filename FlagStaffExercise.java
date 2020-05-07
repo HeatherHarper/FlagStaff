@@ -1,4 +1,4 @@
-a// This program is copyright VUW.
+// This program is copyright VUW.
 // You are granted permission to use it to construct your answer to a Onslow College 13DTC assignment.
 // You may not distribute it in any other way without permission.
 
