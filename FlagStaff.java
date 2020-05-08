@@ -53,7 +53,15 @@ public class FlagStaff{
 
     /** redraw method:
      * Draws the flagstaff (a line) and the flag (a blue rectangle)*/
-    /*# YOUR CODE HERE */     
+    public void redraw() {
+        UI.setColor(Color.black);
+        UI.setLineWidth(3);
+        UI.drawLine(145, flagStaffBase, 145, flagStaffBase - FLAGSTAFF_HEIGHT);
+        UI.setColor(Color.blue);
+        UI.fillRect(146, flagPosition, FLAG_SIZE, FLAG_SIZE);
+        UI.setColor(Color.green);
+        UI.drawLine(10, groundPosition, 300, groundPosition);
+    }     
 
     /** raise method:
      * Parameter:  amount to raise the flag
