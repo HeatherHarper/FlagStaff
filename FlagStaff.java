@@ -30,16 +30,14 @@ import java.awt.Color;
  */
 public class FlagStaff{
 
-    public static final double FLAGSTAFF_HEIGHT = 300;  // 
-    public static final double FLAG_SIZE = 30;  //
+    public static final double FLAGSTAFF_HEIGHT = 300;  
+    public static final double FLAG_SIZE = 30; 
+    public static final double LEFT = 145; //horizontal distance to flag staff
 
-    // fields,
-    // position of the base of the flag staff
-    // position of the flag (eg, the position of the bottom of the flag)
-    // position of the ground
-    double flagStaffBase;
-    double flagPosition;
-    double groundPosition;
+    // fields,           
+    double flagStaffBase;   // position of the base of the flag staff
+    double flagPosition;    // position of top of flag
+    double groundPosition;  // position of the ground
 
     /** Constructor:
      * Parameters: the position of the base of the flag staff
@@ -47,18 +45,19 @@ public class FlagStaff{
      */
     public FlagStaff(double base) {
         flagStaffBase = base;
-        flagPosition = base; // since flag starts at the base
+        flagPosition = base - FLAG_SIZE; // since flag starts at the base
         groundPosition = base + 1; // so ground is below pole
     }
 
     /** redraw method:
      * Draws the flagstaff (a line) and the flag (a blue rectangle)*/
     public void redraw() {
+        UI.clearGraphics();
         UI.setColor(Color.black);
         UI.setLineWidth(3);
-        UI.drawLine(145, flagStaffBase, 145, flagStaffBase - FLAGSTAFF_HEIGHT);
+        UI.drawLine(LEFT, flagStaffBase, LEFT, flagStaffBase - FLAGSTAFF_HEIGHT);
         UI.setColor(Color.blue);
-        UI.fillRect(146, flagPosition, FLAG_SIZE, FLAG_SIZE);
+        UI.fillRect(LEFT + 1, flagPosition, FLAG_SIZE, FLAG_SIZE);
         UI.setColor(Color.green);
         UI.drawLine(10, groundPosition, 300, groundPosition);
     }     
@@ -69,9 +68,9 @@ public class FlagStaff{
      * Does not redraw the flag.
      */
     public void raise(double amountUp) {
-        flagPosition += amountUp;
-        if (flagPosition > (flagStaffBase + FLAGSTAFF_HEIGHT - FLAG_SIZE)){
-            flagPosition = FLAGSTAFF_HEIGHT - FLAG_SIZE;
+        flagPosition -= amountUp;       //- becuase top is y = 0
+        if (flagPosition < (flagStaffBase - FLAGSTAFF_HEIGHT)){
+            flagPosition = flagStaffBase - FLAGSTAFF_HEIGHT;
         }
     }
 
@@ -81,9 +80,9 @@ public class FlagStaff{
      * Does not redraw the flag.
      */
     public void lower(double amountDown) {
-        flagPosition -= amountDown;
-        if (flagPosition < flagStaffBase) {
-            flagPosition = flagStaffBase;
+        flagPosition += amountDown;     //+ becuase top is y = 0
+        if (flagPosition > (flagStaffBase - FLAG_SIZE)) {
+            flagPosition = flagStaffBase - FLAG_SIZE;
         }
     }
     

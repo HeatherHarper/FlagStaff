@@ -17,15 +17,16 @@ import java.awt.Color;
  *  Lamp, PartyBalloon, and FlagStaff classes should do
  */
 
-public class FlagStaffExercise{
+public class FlagStaffExercise {
 
     private static final double GROUND = 400;
-    private FlagStaff flag1 = new FlagStaff(110, GROUND); 
-
+    private FlagStaff flag1 = new FlagStaff(GROUND); 
+    private double raiseAmount; // distance to raise/lower flag from Amount slider
+    
     /** 
      * Makes two FlagStaff objects and makes the flags go up and down.
      */
-    public void doFlagStaff(){
+    public void doFlagStaff(){        
         this.clear();
 
         this.drawGround();
@@ -72,14 +73,14 @@ public class FlagStaffExercise{
     /** doRaise method:
      * raise the flag*/
     private void doRaise() {
-        flag1.raise(amount);
+        flag1.raise(raiseAmount);
         flag1.redraw();
     }
     
     /** doLower method:
      * lower the flag*/
     private void doLower() {
-        flag1.lower(amount);
+        flag1.lower(raiseAmount);
         flag1.redraw();
     }    
         
@@ -105,9 +106,9 @@ public class FlagStaffExercise{
         UI.addButton("Clear", fse::clear );
         UI.addButton("FlagStaff", fse::doFlagStaff );
         
-        final int AMOUNTMIN = -20;
-        final int AMOUNTMAX = 20;
-        final int AMOUNTINT = 20;
+        final int AMOUNTMIN = 0;
+        final int AMOUNTMAX = 100;
+        final int AMOUNTINT = 0;
         
         // Add buttons, textfield, slider
         UI.addButton("Raise", fse::doRaise);
