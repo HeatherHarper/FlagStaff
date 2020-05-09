@@ -2,19 +2,11 @@
 // You are granted permission to use it to construct your answer to a Onslow College 13DTC assignment.
 // You may not distribute it in any other way without permission.
 
-/* Exercise for Onslow College 13DTC
- * Name:
- * Email:
- * Date:
- */
-
 import ecs100.*;
 import java.awt.Color;
 
-/** Exercise for defining objects.
- *  This program contains methods for testing Lamp, PartyBalloon, and FlagStaff objects.
- *  It is all written for you, but you need to read it to see what the
- *  Lamp, PartyBalloon, and FlagStaff classes should do
+/** 
+ * FlagStaffExercise drives the FlagStaff class
  */
 
 public class FlagStaffExercise {
@@ -24,12 +16,11 @@ public class FlagStaffExercise {
     private double raiseAmount; // distance to raise/lower flag from Amount slider
     
     /** 
-     * Makes two FlagStaff objects and makes the flags go up and down.
+     * doFlagStaff raises the flag up then down by random amounts
      */
     public void doFlagStaff(){        
         this.clear();
 
-        this.drawGround();
         flag1.redraw();
         UI.sleep(500);
 
@@ -40,7 +31,6 @@ public class FlagStaffExercise {
             flag1.raise(Math.random()*100);
 
             UI.clearGraphics();
-            this.drawGround();
             flag1.redraw();
 
             UI.sleep(500);
@@ -52,55 +42,62 @@ public class FlagStaffExercise {
             flag1.lower(Math.random()*100);
 
             UI.clearGraphics();
-            this.drawGround();
             flag1.redraw();
 
             UI.sleep(500);
             steps--;   //(shorthand for steps = steps - 1;
         }
     }
-
-    /** Draw the ground */
-    public void drawGround(){
-        UI.setColor(new Color(120, 80, 0));   // dark brown,
-        UI.fillRect(0,GROUND,600,10);  
-    }
-
+    
+    /**
+     * clears the GUI
+     */
     public void clear(){
         UI.clearPanes();
     }
 
-    /** doRaise method:
-     * raise the flag*/
+    /** 
+     * doRaise calls raise method then redraws the flag
+     * @author Heather Harper
+     */
     private void doRaise() {
         flag1.raise(raiseAmount);
         flag1.redraw();
     }
     
-    /** doLower method:
-     * lower the flag*/
+    /** 
+     * doLower calls lower method then redraws the flag
+     * @author Heather Harper
+     */
     private void doLower() {
         flag1.lower(raiseAmount);
         flag1.redraw();
     }    
         
-    /** setAmount method:
-     * sets the amount to raise or lower flag by*/
+    /** 
+     * setAmount sets the raiseAmount feild for raising/lowering flag
+     * @author William Kho
+     * @param amount a double from the amount slider
+     */
     private void setAmount(double amount) {
         this.raiseAmount = amount;
     }
     
-    /** printCountry method:
+    /** 
      * print the country the user entered in textfield
-     * @param country String taken from a textfield using GUI
-    */
+     * @author Chris Sa
+     * @param country a String taken from a textfield using GUI
+     */
     public void printCountry(String country) {
         UI.setColor(Color.black);
         UI.drawString(country, 100, GROUND + 50);
     }
     
-    // Main
-    /** Create a new BallGame object and setup the interface */
+    /** 
+     * main method for FlagStaff project, sets up GUI by adding buttons, textfeild
+     * and slider
+     * @author William Kho
+     */
     public static void main(String[] args){
         FlagStaffExercise fse = new FlagStaffExercise();
         UI.addButton("Clear", fse::clear );
@@ -118,8 +115,7 @@ public class FlagStaffExercise {
         
         
         
-        UI.addButton("Quit", UI::quit );
-        
+        UI.addButton("Quit", UI::quit );        
     }
 
 }
