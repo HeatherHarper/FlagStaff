@@ -86,12 +86,5 @@ public class FlagStaff{
             flagPosition = flagStaffBase;
         }
     }
-
-    /** printCountry method:
-     * Parameter text to print to screen
-     * Prints at the base of the Flag
-     */
-    /*# YOUR CODE HERE */
-
     
 }

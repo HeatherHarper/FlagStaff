@@ -90,8 +90,13 @@ public class FlagStaffExercise{
     }
     
     /** printCountry method:
-     * print the country the user entered in textfield*/
-    /*# YOUR CODE HERE */ 
+     * print the country the user entered in textfield
+     * @param country String taken from a textfield using GUI
+    */
+    public void printCountry(String country) {
+        UI.setColor(Color.black);
+        UI.drawString(country, 100, GROUND + 50);
+    }
     
     // Main
     /** Create a new BallGame object and setup the interface */
